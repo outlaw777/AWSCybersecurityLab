@@ -7,6 +7,8 @@ This repository documents the design and deployment of a **segmented AWS VPC Cyb
 The architecture follows AWS best practices for **network isolation**, **least-privilege**, and **zero‑trust access**, while remaining flexible enough to support attacker-tooling, vulnerable applications, and enterprise‑grade SOC platforms.
 
 ---
+<img width="2169" height="1187" alt="Screenshot 2026-02-06 111027" src="https://github.com/user-attachments/assets/06f8695a-9ad4-45b0-90aa-5a4fdd6a0139" />
+
 
 # **1. Architecture Summary**
 
