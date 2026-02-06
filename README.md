@@ -185,6 +185,3 @@ This VPC Cyber Lab provides a **secure, scalable, and enterprise‑grade environ
 
 ---
 
-
-
-Just tell me what you want to add next.
