@@ -45,7 +45,7 @@ The architecture follows AWS best practices for **network isolation**, **least-p
 
 This section is written specifically for **managers, senior engineers, and executives** who want to understand the *business and security rationale* behind the design.
 
-## **A. Security Leadership Perspective (CISO / CIO / C‑Suite)**
+## **Security Leadership Perspective (CISO / CIO / C‑Suite)**
 
 ### **Risk Reduction**
 - The lab is **fully isolated** from production and corporate networks.
