@@ -10,7 +10,7 @@ The architecture follows AWS best practices for **network isolation**, **least-p
 <img width="2169" height="1187" alt="Screenshot 2026-02-06 111027" src="https://github.com/user-attachments/assets/06f8695a-9ad4-45b0-90aa-5a4fdd6a0139" />
 
 
-# **1. Architecture Summary**
+# Architecture Summary
 
 ## **VPC**
 - **CIDR:** `10.50.0.0/16`  
@@ -41,75 +41,75 @@ The architecture follows AWS best practices for **network isolation**, **least-p
 
 ---
 
-# **2. Why This Architecture Was Chosen**
+# **Why This Architecture Was Chosen**
 
 This section is written specifically for **managers, senior engineers, and executives** who want to understand the *business and security rationale* behind the design.
 
 ## **A. Security Leadership Perspective (CISO / CIO / C‑Suite)**
 
-### **1. Risk Reduction**
+### **Risk Reduction**
 - The lab is **fully isolated** from production and corporate networks.
 - No private resources are exposed to the internet.
 - All access is controlled through a hardened bastion and AWS SSM.
 
-### **2. Compliance Alignment**
+### **Compliance Alignment**
 - Mirrors segmentation patterns used in regulated environments (HIPAA, DoD, PCI).
 - Supports auditability through CloudTrail, VPC Flow Logs, and IAM least privilege.
 
-### **3. Cost Control**
+### **Cost Control**
 - Uses a single VPC with modular Terraform components.
 - NAT Gateway and EC2 instances are right‑sized for lab workloads.
 - Architecture is scalable without unnecessary baseline cost.
 
-### **4. Strategic Value**
+### **Strategic Value**
 - Enables internal teams to train, test, and validate tools without vendor dependencies.
 - Supports red‑team, blue‑team, and purple‑team exercises.
 - Provides a safe environment for evaluating new security technologies.
 
 ---
 
-## **B. Engineering Leadership Perspective (Principal Engineers / Architects)**
+## **Engineering Leadership Perspective (Principal Engineers / Architects)**
 
-### **1. Clean Network Segmentation**
+### **Clean Network Segmentation**
 - Public subnet for controlled ingress.
 - Private subnets for sensitive workloads.
 - NAT Gateway ensures outbound access without inbound exposure.
 
-### **2. Terraform‑Driven Infrastructure**
+### **Terraform‑Driven Infrastructure**
 - Fully reproducible.
 - Version‑controlled.
 - Easy to tear down and rebuild for iterative testing.
 
-### **3. Modular, Scalable Design**
+### **Modular, Scalable Design**
 - Each tool (Nessus, Wazuh, DVWA, etc.) is deployed as an independent module.
 - New tools can be added without redesigning the network.
 
-### **4. Enterprise‑Grade Patterns**
+### **Enterprise‑Grade Patterns**
 - Mirrors real‑world architectures used in SOCs and security labs.
 - Supports multi‑AZ expansion if needed.
 
 ---
 
-## **C. Manager Perspective (Team Leads / Project Managers)**
+## **Manager Perspective (Team Leads / Project Managers)**
 
-### **1. Predictable, Documented Environment**
+### **Predictable, Documented Environment**
 - Clear diagrams, Terraform code, and deployment steps.
 - Easy onboarding for new team members.
 
-### **2. Supports Multiple Use Cases**
+### **Supports Multiple Use Cases**
 - Vulnerability scanning
 - Incident response practice
 - Malware analysis (isolated)
 - Threat emulation
 - SOC tool evaluation
 
-### **3. Reduces External Dependencies**
+### **Reduces External Dependencies**
 - No need for third‑party lab platforms.
 - Internal teams can experiment safely and quickly.
 
 ---
 
-# **3. Tools Deployed in the Lab**
+# **Tools Deployed in the Lab**
 
 ## **Attacker / Red Team**
 - Ubuntu attacker workstation with Dockerized Kali tools  
@@ -131,9 +131,9 @@ This section is written specifically for **managers, senior engineers, and execu
 
 ---
 
-# **4. Deployment Workflow (Terraform)**
+# **Deployment Workflow (Terraform)**
 
-## **1. Infrastructure Creation**
+## **Infrastructure Creation**
 - VPC, subnets, route tables
 - IGW, NAT Gateway
 - Security groups
@@ -141,19 +141,19 @@ This section is written specifically for **managers, senior engineers, and execu
 - Bastion host
 - Private EC2 instances
 
-## **2. Automated Provisioning**
+## **Automated Provisioning**
 - Cloud‑init scripts for initial configuration
 - Dockerized attacker tools
 - Automated installation of SOC platforms
 
-## **3. Logging & Monitoring**
+## **Logging & Monitoring**
 - VPC Flow Logs → CloudWatch
 - CloudTrail enabled
 - SSM Session Manager logging
 
 ---
 
-# **5. Benefits to the Organization**
+# **Benefits to the Organization**
 
 ## **Security**
 - Safe environment for offensive and defensive testing  
@@ -172,7 +172,7 @@ This section is written specifically for **managers, senior engineers, and execu
 
 ---
 
-# **6. Future Enhancements**
+# **Future Enhancements**
 - Multi‑AZ expansion  
 - Automated blue‑team alert pipelines  
 - Integration with SIEM platforms  
@@ -181,7 +181,7 @@ This section is written specifically for **managers, senior engineers, and execu
 
 ---
 
-# **7. Conclusion**
+# **Conclusion**
 
 This VPC Cyber Lab provides a **secure, scalable, and enterprise‑grade environment** for cybersecurity training, testing, and research. It reflects modern cloud security architecture principles and demonstrates the organization’s commitment to building internal capability while minimizing risk and cost.
 
